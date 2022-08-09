@@ -190,3 +190,15 @@ https://blog.csdn.net/yanyuan_1118/article/details/119863596
 组合索引指在多个字段上创建的索引，只有在查询条件中使用了创建索引时的第一个字段，索引才会被使用。使用组合索引时遵循最左前缀集合。
 
 第一个 + 最左前缀
+
+49、MySQL的Join表优化
+
+https://blog.csdn.net/wenqiangluyao/article/details/125786096
+
+驱动表数据取出来去被驱动表之中匹配，双层for循环，join性能问题根源
+
+a. 被驱动表连接字段要加索引
+b. 尽量小表驱动大表
+
+
+50、MySQL的子查询优化
