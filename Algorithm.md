@@ -46,6 +46,7 @@ https://www.runoob.com/w3cnote/ten-sorting-algorithm.html
 3.为什么重写equals以后还要重写hash
 ```
 https://blog.csdn.net/ljfirst/article/details/112506408
+https://www.jianshu.com/p/635960af37fc
 
 直接说特点
 
