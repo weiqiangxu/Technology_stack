@@ -64,3 +64,7 @@ B+树的数据存在叶子节点而跳表存在每一个节点，B+需要多查�
 https://blog.csdn.net/zhanwuguo8346/article/details/118499545
 二分法查找算法时间复杂度就是对数阶 O(log n) 底数是二 
 常数阶就是顺序查找 O(n)
+
+### 各种排序算法以及时间复杂度
+
+### 实现一个hashmap，解决hash冲突的方法，解决hash倾斜的方法
