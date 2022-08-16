@@ -28,11 +28,15 @@ http://zhhz.suda.edu.cn/aa/a9/c3892a43689/page.psp
 存储上不一致，原来的关键字是存储在文档里面，找到文档再找关键字；
 而现在关键字解析后独立存储到另一个地方，这个地方叫词典，然后记录关键字与文档的关联关系
 
+哈希 - 散列算法（变长转定长）
 
-哈希
+### Elastic常见的字段类型
 
-散列算法（变长转定长）
+keyword [integer long byte float] date date_nanos text [需要注意keyword和text的区别]
 
+### 常见的查询选项
 
-
+[query string] 
+全文检索[query]
+精准查询[term query]
 
