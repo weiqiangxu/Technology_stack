@@ -238,8 +238,15 @@ https://www.jianshu.com/p/cfc669f83eaa
 将白色对象清除
 
 
+### Go的GMP模型详解
 
+### GMP之中P和M的对应关系是什么
 
+### Goroutine的状态有哪些
+
+### Redis滑动窗口限频有什么弊端
+
+### 令牌算法实现限制频率是什么
 
 
 
