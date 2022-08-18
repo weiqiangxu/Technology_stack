@@ -243,11 +243,19 @@ https://www.jianshu.com/p/cfc669f83eaa
 ### GMP之中P和M的对应关系是什么
 
 ### Goroutine的状态有哪些
+```
+Grunnable Grunning Gwaiting GDead Gsyscall
+```
+
 
 ### Redis滑动窗口限频有什么弊端
 
 ### 令牌算法实现限制频率是什么
 
 
+
+参考文章
+
+[深度解析go](https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.2.html)
 
 
