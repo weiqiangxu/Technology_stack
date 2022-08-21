@@ -239,6 +239,34 @@ https://www.jianshu.com/p/cfc669f83eaa
 
 
 ### Go的GMP模型详解
+```
+全局队列 [存放等待运行的G]
+P的本地队列 [存放等待运行的G]
+
+
+每个 M 都代表了 1 个内核线程
+P的数量 runtime.GOMAXPROCS() 决定
+runtime/debug.SetMaxThreads 设定 M 的数量 (默认最大1w)
+
+P何时创建 : 程序启动时候
+M何时创建 : M都阻塞了,P还有很多就绪任务时候,M可以新建
+
+调度器的设计策略 : 复用线程M 避免线程被频繁地创建和销毁
+
+work stealing 机制 : 当前M没有可运行的G的时候，可以去偷取其他线程的P的G
+hand off 机制 : 当前M的G阻塞时候，可以将P释放转移给其他M执行
+
+```
+
+### Go的并发为什么效率这么高
+```
+线程复用
+GMP调度模型(work stealing\hand off)
+传统并发基于多线程,大小>2M,上下文切换 [内核态] 涉及IO,性能杀手
+协程 上下文切换[用户态] 大小>2kb
+
+https://zhuanlan.zhihu.com/p/502740833
+```
 
 ### GMP之中P和M的对应关系是什么
 
@@ -252,10 +280,34 @@ Grunnable Grunning Gwaiting GDead Gsyscall
 
 ### 令牌算法实现限制频率是什么
 
+### 什么是抢占式调度
+
+https://www.cnblogs.com/Leo_wl/p/10993731.html
+
+```
+抢占式调度（Preemptive Scheduling）是一种CPU调度技术,通过将CPU的时隙划分给给定的进程来工作
+
+给定的时间间隔执行进程。当进程的区间时间（burst time）大于CPU周期时
+它将被放回到就绪队列（ready queue）中
+并在下一个时机（chance）执行。
+
+当进程切换到就绪状态时，会使用这种调度方式
+
+
+非抢占调度（Non-preemptive Scheduling）一种CPU调度技术
+进程获取资源(CPU时间)并持有它
+直到进程终止或推送到等待状态。进程不会被中断
+直到它完成，然后处理器切换到另一个进程
+```
+```
+所以抢占式就是CPU有中途打断交给其他线程动作
+```
+
+### 什么是IO多路复用
 
 
 参考文章
 
 [深度解析go](https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.2.html)
-
+[深入学习Go的GMP](https://zhuanlan.zhihu.com/p/502740833)
 
