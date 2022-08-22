@@ -205,3 +205,13 @@ b. 尽量小表驱动大表
 ### MySQL的子查询优化
 
 ### MySQL高可用的方案
+
+### MySQL实现热备
+```
+flush logs
+mysqldump 全量备份 [有事务ID和下面的binlog比对事务ID备份增量的数据]
+
+/usr/bin/mysqlbinlog --start-position=1 --stop-position=2 --database=ops \
+/var/lib/mysql/mysql-bin.000003 | /usr/bin/mysql -uroot -p123456 -v ops
+```
+
