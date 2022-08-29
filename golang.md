@@ -308,8 +308,17 @@ https://www.cnblogs.com/Leo_wl/p/10993731.html
 ### Go程序线上内存泄漏bug定位
 
 
+### Go的Slice的截取的原理
+
+### Recover恢复panic底层实现
+
+### Golang的channel的通信的底层实现
+
+
+
 参考文章
 
 [深度解析go](https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.2.html)
 [深入学习Go的GMP](https://zhuanlan.zhihu.com/p/502740833)
+
 

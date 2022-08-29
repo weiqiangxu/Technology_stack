@@ -128,6 +128,7 @@ request.header.If-None-Match 和 response.header.ETag
 服务器响应 Status Code:304 Not Modified(不返回资源) 或者 Status Code:200(返回资源)
 ```
 
+### HTTP和RPC的区别
 
 ### 参考博客
 
