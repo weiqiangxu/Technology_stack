@@ -314,11 +314,34 @@ https://www.cnblogs.com/Leo_wl/p/10993731.html
 
 ### Golang的channel的通信的底层实现
 
+### M和P的对应关系是什么样子的
+```
+1.一个线程有一个M，这是一一对应 (M是内核线程封装)
+2.P的数量(默认是CPU核数runtime.GOMAXPROCS定义),P是调度队列，其数量也代表并行Goroutine并行执行数
 
+N个P可以同时地去除N个G给M执行 , 所以P的数量等于G的并行执行数量
+M：OS thread
+
+
+```
+
+### 协程的上下文切换不涉及内核态只是用户态
+
+### channel与GPM调度
+
+[博客](https://www.cnblogs.com/aganippe/p/16009158.html)
+
+```
+如果G1持有channel且channel阻塞，调度器会将G1更改为waiting并移除与M的联系（重新去P的runqueue中选G给M）
+
+
+```
 
 参考文章
 
 [深度解析go](https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.2.html)
 [深入学习Go的GMP](https://zhuanlan.zhihu.com/p/502740833)
+[GPM图例画的很棒的博客](https://blog.csdn.net/pbrlovejava/article/details/117604004)
 
 
+[非常细致讲解从单核到多核](https://learnku.com/articles/41728)
