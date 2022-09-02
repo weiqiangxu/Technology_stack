@@ -25,3 +25,5 @@
 [面向信仰编程之八股文](https://draveness.me/)
 
 [GO修养之路](https://www.yuque.com/aceld/golang/ithv8f)
+
+[互联网 Java 工程师进阶知识完全扫盲](https://doocs.github.io/advanced-java)
